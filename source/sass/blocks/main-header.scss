@@ -1,9 +1,26 @@
 .main-header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 65px;
+  grid-template-columns: 1fr;
   margin: 0;
-  padding: 10px 0 17px 0;
 
-  text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    padding: 24px 0 0 0;
+    display: grid;
+    grid-template-columns: 174px 1fr;
+    gap: 94px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 53px 0 0 0;
+    display: grid;
+  }
+}
+
+.main-header__logo {
+  margin: 10px 0 17px 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    margin: 0;
+  }
 }

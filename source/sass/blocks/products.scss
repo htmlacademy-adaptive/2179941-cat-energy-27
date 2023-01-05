@@ -1,5 +1,15 @@
 .products {
   padding: 27px 0 0 0;
+  border-top: 1px solid $color-gainsboro;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    border: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    border: none;
+  }
 }
 
 .products__title {
@@ -23,19 +33,20 @@
 }
 
 .products__list {
-  margin: 0;
+  margin: 0 -20px 0 -20px;
   padding: 0;
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr;
 
   @media (min-width: $tablet-width) {
+    margin: 0;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
   }
 
   @media (min-width: $desktop-width) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 63px 80px;
+    gap: 63px 6%;
   }
 }

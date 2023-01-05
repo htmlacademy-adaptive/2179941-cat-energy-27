@@ -2,16 +2,39 @@
   position: relative;
   z-index: 0;
 
-  padding: 186px 50px 40px 50px;
+  padding: 59px 50px 40px 50px;
 
   text-align: center;
 
   background-color: $color-nobel;
-  background-image: url("../img/backgrounds/cat-case.png");
+  background-image: url("../img/backgrounds/cat-case-mobile.jpg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/backgrounds/cat-case-mobile@2x.jpg");
+  }
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    padding: 71px 124px 69px 422px;
+    background-image: url("../img/backgrounds/cat-case-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/backgrounds/cat-case-tablet@2x.jpg");
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    padding: 184px 43px 42px 41px;
+    background-image: url("../img/backgrounds/cat-case-desktop.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/backgrounds/cat-case-desktop@2x.jpg");
+    }
+  }
 }
 
 .get-gift::after {
@@ -37,4 +60,8 @@
   line-height: 20px;
   font-family: $ff-lato;
   color: $color-default-white;
+
+  @media (min-width: $tablet-width) {
+    text-align: left;
+  }
 }

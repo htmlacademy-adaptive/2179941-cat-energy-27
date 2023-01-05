@@ -2,6 +2,22 @@
   display: flex;
   flex-direction: column;
   padding: 25px 0 35px 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 25px 0 76px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 81px 0 86px 0;
+  }
+}
+
+.additional-goods__wrapper {
+  margin: 0 0 35px 0;
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
 }
 
 .additional-goods__title {
@@ -10,6 +26,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
+  position: relative;
 
   @media (min-width: $tablet-width) {
     font-size: 36px;
@@ -22,12 +39,34 @@
     line-height: 36px;
     margin: 0 0 81px 0;
   }
+
+  span {
+    background-color: $color-default-white;
+    padding: 0 20px 0 20px;
+    margin: 0 -20px 0 -20px;
+  }
+}
+
+.additional-goods__title::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 16px;
+  left: -100vw;
+  width: 200vw;
+  height: 2px;
+  background-color: $color-apple;
+  z-index: -1;
+
+  @media (min-width: $desktop-width) {
+    top: 20px;
+  }
 }
 
 .additional-goods__section {
   @media (min-width: $desktop-width) {
     display: grid;
-    grid-template-columns: auto 245px;
+    grid-template-columns: 1fr 245px;
     gap: 79px;
   }
 }
@@ -38,13 +77,20 @@
   list-style-type: none;
 
   @media (min-width: $tablet-width) {
-    border: 1px solid $color-very-light-grey;
-    margin: 0 0 69px 0;
+    border-right: 1px solid $color-very-light-grey;
+    border-left: 1px solid $color-very-light-grey;
+    margin: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    border: none;
+    margin: 0;
   }
 }
 
 .additional-goods__item {
   padding: 13px 0 18px 0;
+  border-top: 1px solid $color-very-light-grey;
 
   @media (min-width: $tablet-width) {
     padding: 26px 38px 28px 38px;
@@ -52,5 +98,12 @@
 
   @media (min-width: $desktop-width) {
     padding: 15px 0 17px 0;
+    display: grid;
+    grid-template-columns: 68% 27%;
+    gap: 1fr;
   }
+}
+
+.additional-goods__item:last-child {
+  border-bottom: 1px solid $color-very-light-grey;
 }
